@@ -279,7 +279,7 @@ void ctkAbstractPythonManager::executeFile(const QString& filename)
         << "_ctk_executeFile_exc_info = None"
         << "try:"
         << QString("    execfile('%1', _updated_globals)").arg(filename)
-        << "except Exception, e:"
+        << "except Exception as e:"
         << "    _ctk_executeFile_exc_info = sys.exc_info()"
         << "finally:"
         << "    del _updated_globals"
