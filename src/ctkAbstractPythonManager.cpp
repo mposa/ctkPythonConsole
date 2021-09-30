@@ -285,7 +285,7 @@ void ctkAbstractPythonManager::executeFile(const QString& filename)
         << "    del _updated_globals"
         << QString("    if sys.path[0] == '%1': sys.path.pop(0)").arg(path)
         << "    if _ctk_executeFile_exc_info:"
-        << "        raise _ctk_executeFile_exc_info[1], None, _ctk_executeFile_exc_info[2]";
+        << "        raise(_ctk_executeFile_exc_info[1], None, _ctk_executeFile_exc_info[2])";
     this->executeString(code.join("\n"));
     //PythonQt::self()->handleError(); // Clear errorOccured flag
     }
